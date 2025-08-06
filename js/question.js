@@ -21,6 +21,7 @@ let currentNumber = 0;
 let mbti = '';
 
 //choice1El 과 choice2El에 클릭 이벤트를 걸어본다.
+// 콜백 함수 : 앞에서 정의한 조건이 만족 할 때 실행되는 함수
 
 choice1El.addEventListener('click', function () {
   nextQuestion(0);
@@ -32,8 +33,7 @@ choice2El.addEventListener('click', function () {
 
 function nextQuestion(choiceNumber) {
   if(currentNumber == questions.length - 1){
-    //결과 페이지로 이동
-    //검사한 mbti 결과를 갖고 결과 페이지로 이동
+   //검사한 mbti 결과를 갖고 결과 페이지로 이동
     console.log('결과 페이지로 이동할거야~ 구현 중...')
     shoeResultPage();
     return
@@ -60,7 +60,6 @@ function renderQuuestion() {
   choice1El.innerHTML = question.choices[0].text
   choice2El.innerHTML = question.choices[1].text
   progressBar.style.width = (currentNumber + 1) * 10 + '%';
-
 }
 
 renderQuuestion();
